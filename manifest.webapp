@@ -2,7 +2,7 @@
   "version": "0.1",
   "name": "Graphing Calculator",
   "description": "Plots the graph to the equation you give/",
-  "launch_path": "/",
+  "launch_path": "/index.html",
   "icons": {
     "128": "icon-128.png"
   },
