@@ -25,7 +25,7 @@
 			top: 0;
 			left: 0;
 			background: rgba(255, 255, 255, 0.9);
-			padding: 0 10px;
+			padding: 2px 7px 0px 7px;
 			z-index: 50;
 			text-align: left;
 		}
@@ -70,7 +70,7 @@
 		}
 		#bottomBox {
 			display: inline-block;
-			background: rgba(255, 255, 255, 0.9);
+			background: rgba(0, 0, 0, 0.9);
 			padding: 0 10px;
 			z-index: 50;
 		}
@@ -124,7 +124,7 @@
 		}
 	</style>
 
-<!-- This section is Google tracking stuff, nothing Canvas related here...  -->
+<!-- This section is Google tracking stuff, nothing Canvas related here... --> 
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21849136-1']);
@@ -139,7 +139,10 @@
 
 </head>
 <body>
-<div id="topContainer" onmousedown="clickCanvas(event);"><div id="topBox" onmousedown="return true;">
+<div id="topContainer" onmousedown="clickCanvas(event);"><div id="topBox" onmousedown="return true;" style="background-color:black;">
+<div id="topClose"><a href="javascript:closeTopBox();">&#215;</a></div>
+<font color="white"><h1>Welcome to Firefox's Graphing Calculator</h1></font>
+
 </div></div>
 	
 <!--  The canvas size below is temporary, the code will reset it.  -->
@@ -149,28 +152,12 @@ Try FireFox, Chrome, Opera, or Safari instead.
 </canvas>
 
 <div id="bottomContainer" onmousedown="clickCanvas(event);"><div id="bottomBox" onmousedown="return true;">
-	<p>
-	y = <input type="text" size="50" name="formula" id="formula" value="sin(x)" />
+	<p><font color="white">
+	y = <input type="text" size="30" name="formula" id="formula" value="sin(x)" />
 	<input type="button" value="Plot" onclick="plot();" />
-	<span id="numPts"></span>
+	<span id="numPts"></span></font>
 	</p>
 
-
-<!--	<table border="0" cellpadding="0" cellspacing="2" class="presetTable">
-	<tr><th colspan="4">Sample functions:</th></tr>
-	<tr><td><a href="javascript:showFormula('sin(x)', 0, 0, 13);">y = sin(x)</a></td>
-		<td><a href="javascript:showFormula('cos(x)', 0, 0, 13);">y = cos(x)</a></td>
-		<td><a href="javascript:showFormula('tan(x)', 0, 0, 7);">y = tan(x)</a></td>
-		<td><a href="javascript:showFormula('x * x', 0, 1.2, 4.2);">y = x * x</a></td></tr>
-	<tr><td><a href="javascript:showFormula('asin(x)', 0, 0, 4.8);">y = asin(x)</a></td>
-		<td><a href="javascript:showFormula('acos(x)', 0, pi / 2, 4.8);">y = acos(x)</a></td>
-		<td><a href="javascript:showFormula('atan(x)', 0, 0, 13);">y = atan(x)</a></td>
-		<td><a href="javascript:showFormula('pow(x, 3)', 0, 0, 4.8);">y = pow(x, 3)</a></td></tr>
-	<tr><td><a href="javascript:showFormula('log(x)', 4, 0, 8.5);">y = log(x)</a></td>
-		<td><a href="javascript:showFormula('exp(x)', -2.0, 2.8, 8.5);">y = exp(x)</a></td>
-		<td><a href="javascript:showFormula('x * (x + 1) * (x - 2)', 0, -0.8, 5.5);">y = x * (x+1) * (x-2)</a></td>
-		<td><a href="javascript:showFormula('pow(cos(x*pi), 7)', 2.5, 0, 6);">y = pow(cos(x*pi), 7)</a></td></tr>
-	</table>-->
 </div></div>
 
 <script type="text/javascript">
@@ -357,7 +344,7 @@ Try FireFox, Chrome, Opera, or Safari instead.
 		}
 		context.stroke();
 		context.closePath();
-		numPts.innerHTML = "Plotted " + plotted + " points.";
+	//	numPts.innerHTML = "Plotted " + plotted + " points.";
 	}
 
 	// Create a blue grid as a background
